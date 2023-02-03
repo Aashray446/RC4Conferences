@@ -3,9 +3,10 @@ import {
   InputGroup,
   Toast,
 } from "react-bootstrap";
+import TextEditor from "../textEditor/textEditor";
 
-export const EventForm = ({ handleChange, intialValues, ticket , handleSwitch, handlePublicSwitch, isPublic }) => {
-  
+export const EventForm = ({ handleChange, intialValues, ticket, handleSwitch, handlePublicSwitch, isPublic }) => {
+
   return (
     <>
       <Form.Group className="mb-3">
@@ -74,6 +75,9 @@ export const EventForm = ({ handleChange, intialValues, ticket , handleSwitch, h
           placeholder=""
         />
       </Form.Group>
+      <TextEditor>
+
+      </TextEditor>
       <InputGroup className="mb-3">
         <InputGroup.Text>Ticketed Event</InputGroup.Text>
         <InputGroup.Text aria-label="Switch-group">
@@ -92,7 +96,7 @@ export const EventForm = ({ handleChange, intialValues, ticket , handleSwitch, h
           name="name"
           type="text"
           onChange={handleSwitch}
-          value = {ticket.name}
+          value={ticket.name}
           placeholder={
             ticket.state ? "Free Ticket Name" : "Free Registration Name"
           }
@@ -101,7 +105,7 @@ export const EventForm = ({ handleChange, intialValues, ticket , handleSwitch, h
           required
           name="quantity"
           type="number"
-          value = {ticket.quantity}
+          value={ticket.quantity}
           min={1}
           onChange={handleSwitch}
           placeholder="Quantity"
